@@ -32,6 +32,7 @@ class UsersController < ApplicationController
         :password,
         :gender,
         :age,
-        :role)
+        :role,
+        :user_ids => [])
     end
 end
