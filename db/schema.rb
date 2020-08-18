@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_155428) do
+ActiveRecord::Schema.define(version: 2020_08_18_211450) do
 
   create_table "auditions", force: :cascade do |t|
     t.integer "user_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_155428) do
     t.string "password_digest"
     t.string "gender"
     t.integer "age"
-    t.string "role"
+    t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

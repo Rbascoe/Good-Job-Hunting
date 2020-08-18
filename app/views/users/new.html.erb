@@ -19,7 +19,7 @@
     <%= f.number_field :age %><br>
     <%= f.label :gender %>
     <%= f.text_field :gender %><br><br>
-    <%= f.select(:role, User.roles.keys.map{|role| role }) %><br><br><br>
+    <%= f.select(:role, User.roles.keys.map{|role| role}) %><br><br><br>
     <%= f.submit "Sign Up" %>
 <% end %>
 
