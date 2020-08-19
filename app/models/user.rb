@@ -3,7 +3,8 @@ class User < ApplicationRecord
 has_secure_password
 
 has_many :auditions
-has_many :jobs, through: :auditions
+has_many :audition_jobs, through: :auditions, source: :jobs 
+has_many :jobs 
   
 enum role: [:actor, :producer]
 

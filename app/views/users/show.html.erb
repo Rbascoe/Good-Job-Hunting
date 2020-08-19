@@ -15,6 +15,9 @@
 </div>
 <br>
 <% if current_user.role == "producer" %>
-<%= @user.jobs.each{|job| link_to job.title, job_path(job)}  %>
-<%= link_to "Make New Job", new_job_path %>
+<h3>Jobs:</h3>
+<% @user.jobs.each do |job| %>
+<%= link_to job.title, job_path(job)  %><br>
+<% end %><br><br>
+<%= link_to "Create New Job", new_job_path %>
 <% end %>

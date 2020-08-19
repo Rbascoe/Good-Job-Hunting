@@ -14,9 +14,9 @@ class JobsController < ApplicationController
 
     def create
         @job = Job.new(job_params)
+        @job.user_id = current_user.id 
         if @job.valid?
-            @job.save
-            session[:user_id] = @user.id
+            @job.save 
             redirect_to job_path(@job)
         else
             render :new
@@ -32,7 +32,7 @@ class JobsController < ApplicationController
     private
 
     def job_params
-        params.require(:job).permit(:title, :description, :location, :salary)
+        params.require(:job).permit(:title, :description, :location, :salary, :user_id)
     end
 
 end
