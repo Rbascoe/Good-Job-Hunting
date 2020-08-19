@@ -1,3 +1,4 @@
 <h1>Good Job Hunting</h1>
 
 <br>
+<% Job.all.each{|job| link_to job.title, job_path(job)}%>

@@ -1,5 +1,13 @@
 class JobsController < ApplicationController
 
+    def index
+        @jobs = Job.all
+    end
+
+    def show
+        @job = Job.find(params[:id])
+    end
+
     def new
         @job = Job.new
     end
@@ -13,6 +21,18 @@ class JobsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def destroy
+        id = params[:id]
+        Job.destroy(id)
+        redirect_to jobs_path
+    end
+
+    private
+
+    def job_params
+        params.require(:job).permit(:title, :description, :location, :salary)
     end
 
 end
