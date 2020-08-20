@@ -1,6 +1,8 @@
 <h1><%= @job.title%></h1>
 
 <div>
+<h3> Job ID Number: </h3>
+<%= @job.id %>
 <h3>Description:</h3>
 <%= @job.description %>
 <h3>Location:</h3>
@@ -15,7 +17,7 @@
 <% end %>
 
 <% if current_user.role == "actor" %><br>
-<%= link_to "Apply" %>
+<%= link_to "Apply", new_audition_path %>
+<% end %>
 <% end %>
 
-<% end %>

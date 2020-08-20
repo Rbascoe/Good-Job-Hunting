@@ -26,7 +26,7 @@ class JobsController < ApplicationController
     def destroy
         id = params[:id]
         Job.destroy(id)
-        redirect_to jobs_path
+        redirect_to user_path(current_user)
     end
 
     private

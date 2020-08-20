@@ -1,6 +1,6 @@
 <h1>Good Job Hunting</h1>
 
-<br>
+<h3> Available Jobs: </h3>
 <% Job.all.each do |job| %>
 <%= link_to job.title, job_path(job)%><br><br>
 <% end %>
