@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :find_user, only: [:show, :edit, :update]
     def index
     end
 
@@ -30,10 +30,9 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)
     end
 
-    def destroy
-        id = params[:id]
-        User.destroy(id)
-        session.clear
+    def destroy 
+        user = current_user.id
+        User.destroy(user)
         redirect_to root_path
     end
 
