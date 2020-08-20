@@ -9,6 +9,11 @@ has_many :jobs
 enum role: [:actor, :producer]
 
 validates :username, :email, presence: true, uniqueness: true
+validates :password, length: {minimum: 5}
+
+def display_name
+    return self.name.titlecase 
+end
 
 
 end
