@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_195501) do
+ActiveRecord::Schema.define(version: 2020_08_20_153435) do
 
   create_table "auditions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "audition_status"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -26,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_08_19_195501) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "producer_id"
     t.integer "user_id"
   end
 
