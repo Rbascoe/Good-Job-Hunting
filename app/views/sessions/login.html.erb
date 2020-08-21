@@ -2,12 +2,10 @@
 
 <div class = "error"> <%= flash[:login_error] %> </div>
 
-<%= form_tag login_path do %>
+<%= form_tag login_path html: {class: "ui form" } do %>
     <%= label_tag :username %> <br>
     <%= text_field_tag :username %> <br>
     <%= label_tag :password %> <br>
-    <%= password_field_tag :password %> <br>
-    <%= submit_tag "Log In" %>
+    <%= password_field_tag :password %> <br> <br>
+    <%= submit_tag "Log In", class: "small ui violet button"%>
 <% end %>
-<br>
-<%= link_to "Back to Homepage", root_path %>

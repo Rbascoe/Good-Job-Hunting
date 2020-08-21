@@ -1,27 +1,43 @@
-<h1><%= @user.name %></h1>
-
 <div>
-<h3> Role: </h3>
-<%= @user.role %><br>
-<h3> Username: </h3>
-<%= @user.username %><br>
-<h3> Email: </h3>
-<%= @user.email %><br>
-<h3> Age: </h3>
-<%= @user.age %><br>
-<h3> Gender: </h3>
-<%= @user.gender %>
-
+<h1><%= @user.name %></h1>
 </div>
+
+
+<h3> Role: </h3>
+
+<p class="paragraph-one"> <%= @user.role.capitalize %></p>
+
+
+<h3> Username: </h3>
+    <p class="paragraph-one"> <%= @user.username %></p>
+
+<h3> Email: </h3>
+    <p class="paragraph-one"> <%= @user.email %></p>
+
+<h3> Age: </h3>
+    <p class="paragraph-one"> <%= @user.age %></p>
+
+<h3> Gender: </h3>
+    <p class="paragraph-one"> <%= @user.gender.titlecase %></p>
 <br>
-<% if current_user.role == "producer" %>
-<h3>Jobs:</h3>
-<% @user.jobs.each do |job| %>
-<%= link_to job.title, job_path(job)  %><br>
-<% end %><br><br>
-<%= link_to "Create New Job", new_job_path %>
-<% end %>
-<br><br>
-<%= link_to "Update Profile", edit_user_path %><br>
-<%= link_to "Delete Account", user_path, method: :delete %><br><br>
-<%= link_to "Job List", root_path %>
+<br>
+<br>
+    <% if current_user.role == "producer" %>
+<h3> Job Listing: </h3>
+    <% @user.jobs.each do |job| %>
+    <p class="paragraph-one"> <%= link_to job.title, job_path(job) %> </p>
+    <% end %>
+<br>
+<br>
+<h4>
+<%= link_to "Create New Job", new_job_path, class: "small ui violet button" %><br><br>
+    <% end %>
+<%= link_to "Update Profile", edit_user_path,class: "small ui violet button" %><br><br>
+
+<%= link_to "Delete Account", user_path, method: :delete, class: "small ui violet button" %>
+
+</h4>
+<br>
+<br>
+
+

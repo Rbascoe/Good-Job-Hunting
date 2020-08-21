@@ -17,10 +17,4 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
 
-    def current_job
-        # Job.find(session[:job.id])
-    end
-
-    helper_method :current_job
-
 end

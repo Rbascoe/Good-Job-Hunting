@@ -2,22 +2,22 @@
 
 <div>
 <h3> Job ID Number: </h3>
-<%= @job.id %>
+<p class="paragraph-one"> <%= @job.id %></p>
 <h3>Description:</h3>
-<%= @job.description %>
+<p class="paragraph-one"> <%= @job.description %></p>
 <h3>Location:</h3>
-<%= @job.location %>
+<p class="paragraph-one"> <%= @job.location %> </p>
 <h3>Salary:</h3>
-<%= @job.salary %>
+<p class="paragraph-one"> <%= @job.salary %> </p>
 </div>
 
 <% if current_user %>
 <% if @job.user_id == current_user.id %><br>
-<%= link_to "Delete Job", job_path, method: :delete %>
+<%= link_to "Delete Job", job_path, method: :delete, class: "small ui violet button" %>
 <% end %>
 
 <% if current_user.role == "actor" %><br>
-<%= link_to "Apply", new_audition_path %>
+<%= link_to "Apply", new_audition_path, class: "small ui violet button" %>
 <% end %>
 <% end %>
 

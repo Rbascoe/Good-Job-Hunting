@@ -3,7 +3,7 @@
 </div>
 
 
-<h3> Available Jobs: </h3>
+<h3> Jobs Listing: </h3>
 <% Job.all.each do |job| %>
-<%= link_to job.title, job_path(job)%><br><br>
+<p class="paragraph-one"> <%= link_to job.title, job_path(job)%> </p>
 <% end %>

@@ -4,7 +4,7 @@
     <% end %>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {class: "ui form" } do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
     <%= f.label :username %>
@@ -18,8 +18,5 @@
     <%= f.label :gender %>
     <%= f.text_field :gender %><br><br>
     <%= f.select(:role, User.roles.keys.map{|role| role}) %><br><br><br>
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "small ui violet button" %>
 <% end %>
-
-<br>
-<%= link_to "Back to Homepage", root_path %>
