@@ -6,10 +6,10 @@
     <% end %>
 <% end %>
 
-<%= form_for @audition do |f| %>
+<%= form_for @audition,  html: {class: "ui form" } do |f| %>
     <%= f.label :name %>
     <%= f.text_field :user_id %><br>
     <%= f.label :job %> ID Number
-    <%= f.text_field :job_id %> <br>
-    <%= f.submit "I want to Audition" %>
+    <%= f.text_field :job_id %> <br><br>
+    <%= f.submit "I want to Audition", class: "small ui violet button" %>
 <% end %>
